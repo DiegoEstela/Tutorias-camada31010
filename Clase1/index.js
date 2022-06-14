@@ -28,7 +28,8 @@ class User {
   }
   
 
-const user = new Usuario("Diego", "Estela")
-
+const user = new User("Diego", "Estela", "mono")
+user.Addbook("rayuela", "Juñio Cortazar")
+console.log(user)
 
 
