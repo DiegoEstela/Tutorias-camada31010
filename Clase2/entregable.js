@@ -5,6 +5,15 @@ class Contenedor {
   constructor(ruta) {
     this.ruta = ruta;
   }
+  async getAll() {
+    try {
+      const objs = await fs.readFile(this.ruta, 'utf-8')
+      return JSON.parse(objs)
+    } catch (error) {
+      return []
+    }
+  }
+
 
   async save(obj) {
     const objs = await this.getAll()
@@ -13,7 +22,7 @@ class Contenedor {
     if (objs.length == 0) {
       newId = 1
     } else {
-      console.log(objs[objs.length - 1].id)
+      newId = objs[objs.length - 1].id + 1
     }
 
     const newObj = { ...obj, id: newId }
@@ -33,14 +42,6 @@ class Contenedor {
     return buscado
   }
 
-  async getAll() {
-    try {
-      const objs = await fs.readFile(this.ruta, 'utf-8')
-      return JSON.parse(objs)
-    } catch (error) {
-      return []
-    }
-  }
 
   async deleteById(id) {
     const objs = await this.getAll()
@@ -64,6 +65,10 @@ class Contenedor {
 
 const productos = new Contenedor("productos.txt")
 
-productos.save({"title": "Globo Terráqueo",
-"price": 345.67,
-"thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png"})
+productos.save(  {
+  "title": "Globo Terráqueo",
+  "price": 345.67,
+  "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png",
+})
+
+
