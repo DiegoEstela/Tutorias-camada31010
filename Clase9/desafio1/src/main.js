@@ -1,21 +1,22 @@
-const express = require('express')
-const exphbs = require('express-handlebars')
+const express = require("express");
+const exphbs = require("express-handlebars");
 
-const app = express()
+const app = express();
 
-app.engine('handlebars', exphbs())
-app.set('view engine', 'handlebars')
+app.engine("handlebars", exphbs());
+app.set("view engine", "handlebars");
 
-app.set('views', './views')
+app.set("views", "./views");
 
-app.get('/', (req, res) => {
-  res.render('datos', {
-    nombre: 'coder',
-    apellido: 'house',
+app.get("/", (req, res) => {
+  res.render("datos", {
+    nombre: "coder",
+    apellido: "house",
     edad: 25,
-    email: 'coder@house',
-    telefono: '12345678'
-  })
-})
+    email: "coder@house",
+    telefono: "12345678",
+    dni: "123123123",
+  });
+});
 
-app.listen(8080)
+app.listen(8080);
