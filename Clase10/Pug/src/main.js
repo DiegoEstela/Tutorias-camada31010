@@ -14,3 +14,5 @@ const server = app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${server.address().port}`)
 })
 server.on('error', error => console.log(`Error en servidor ${error}`))
+
+// http://localhost:8080/datos?min=1&nivel=20&max=40&titulo=valor
