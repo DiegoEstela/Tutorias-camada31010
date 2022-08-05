@@ -42,11 +42,11 @@ io.on('connection', async socket => {
         io.sockets.emit('mensajes', await mensajesApi.listarAll());
     })
 
-    socket.on("eventLike", (msgId)=>{
+    socket.on("eventLike", async (msgId)=>{
         const msg = await mensajesApi.listar(msgId)
         msg.likes ++
         await mensajesApi.actualizar(msgId , msg)
-        socketServer.socket.emit("update", "se actualizaron los mensajes")
+        socket.emit("update", "se actualizaron los mensajes")
     })
 });
 

@@ -59,6 +59,7 @@ function makeHtmlList(mensajes) {
                 <b style="color:blue;">${mensaje.autor}</b>
                 [<span style="color:brown;">${mensaje.fyh}</span>] :
                 <i style="color:green;">${mensaje.texto}</i>
+                <button> <i> Me gusta</i></button>
             </div>
         `)
     }).join(" ");
@@ -75,3 +76,7 @@ inputMensaje.addEventListener('input', () => {
     const hayTexto = inputMensaje.value.length
     btnEnviar.disabled = !hayTexto
 })
+
+function likeMessage(msgId){
+    socket.emit("eventLike", msgId)
+}
