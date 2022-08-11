@@ -1,0 +1,17 @@
+{
+  "name": "1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mensajes.js",
+  "scripts": {
+    "start": "node .",
+    "prod": "./node_modules/.bin/webpack ./mensaje1.js ./mensaje2.js ./mensaje3.js -o ./mensajes.js --mode='production' -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
+  }
+}
