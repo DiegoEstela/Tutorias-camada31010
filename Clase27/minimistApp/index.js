@@ -6,6 +6,11 @@ const options = {
         m: "modo",
         p: "puerto",
         d: "debug"
+    },
+    default: {
+        modo: "prod",
+        puerto: 0,
+        debug: false
     }
 }
 const objeto = parseArg(process.argv.slice(2), options)
