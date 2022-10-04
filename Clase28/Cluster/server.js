@@ -1,7 +1,5 @@
-const cluster = require('cluster')
-
 const http = require('http')
-
+const cluster = require('cluster')
 const numCPUs = require('os').cpus().length
 
 if (cluster.isMaster) {
@@ -21,4 +19,4 @@ if (cluster.isMaster) {
     }).listen(8000)
 
     console.log(`Worker ${worker.process.pid} started`)
-}
+} 
