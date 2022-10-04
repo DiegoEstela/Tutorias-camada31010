@@ -10,7 +10,8 @@ if (cluster.isMaster) {
     }
 
     cluster.on('exit', (worker, code, signal) => {
-        console.log(`Worker ${worker.process.pid} died`)
+        console.log(`Worker ${process.pid} died`)
+        cluster.fork()
     })
 } else {
     http.createServer((req, res) => {
@@ -18,5 +19,5 @@ if (cluster.isMaster) {
         res.end('Hola mundo!')
     }).listen(8000)
 
-    console.log(`Worker ${worker.process.pid} started`)
+    console.log(`Worker ${process.pid} started`)
 } 
