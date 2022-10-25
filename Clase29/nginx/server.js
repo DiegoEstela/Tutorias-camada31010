@@ -27,12 +27,7 @@
 
 
 const express = require('express')
-
 const app = express()
-
-//app.use(express.static('public'))
-
-//console.log(parseInt(process.argv[2]))
 const PORT = parseInt(process.argv[2]) || 8080
 
 app.get('/datos', (req,res) => {
