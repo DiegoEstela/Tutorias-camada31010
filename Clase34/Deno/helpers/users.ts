@@ -1,5 +1,5 @@
-import { Context, helpers } from "../devDepencies.ts";
-import { User } from "../types/users.ts";
+import { Context, helpers } from "../devDepencies";
+import { User } from "../types/users";
 
 const arr: any = [];
 

@@ -1,5 +1,5 @@
-import { Router } from "../devDepencies.ts";
-import { findUserAll, findUserById, createUser } from "../helpers/users.ts";
+import { Router } from "../devDepencies";
+import { findUserAll, findUserById, createUser } from "../helpers/users";
 
 export const router = new Router()
 .get("/api/users", findUserAll)

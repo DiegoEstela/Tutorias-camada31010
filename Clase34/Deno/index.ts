@@ -1,6 +1,6 @@
 
-import {Application, Context } from "./devDepencies.ts"
-import {router} from "./routes/index.ts"
+import {Application } from "./devDepencies"
+import {router} from "./routes/index"
 const PORT = 8080;
 const app = new Application()
 
